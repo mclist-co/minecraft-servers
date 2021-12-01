@@ -1,0 +1,164 @@
+name: publish docker images
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - minecraft_version: 1.16.5
+            type: spigot
+            java: java11
+          - minecraft_version: 1.16.4
+            type: spigot
+            java: java11
+          - minecraft_version: 1.16.3
+            type: spigot
+            java: java11
+          - minecraft_version: 1.16.2
+            type: spigot
+            java: java11
+          - minecraft_version: 1.16.1
+            type: spigot
+            java: java11
+          - minecraft_version: 1.16
+            type: spigot
+            java: java11
+
+          - minecraft_version: 1.15.2
+            type: spigot
+            java: java8
+          - minecraft_version: 1.15.1
+            type: spigot
+            java: java8
+          - minecraft_version: 1.15
+            type: spigot
+            java: java8
+
+          - minecraft_version: 1.14.4
+            type: spigot
+            java: java8
+          - minecraft_version: 1.14.3
+            type: spigot
+            java: java8
+          - minecraft_version: 1.14.2
+            type: spigot
+            java: java8
+          - minecraft_version: 1.14.1
+            type: spigot
+            java: java8
+          - minecraft_version: 1.14
+            type: spigot
+            java: java8
+
+          - minecraft_version: 1.13.2
+            type: spigot
+            java: java8
+          - minecraft_version: 1.13.1
+            type: spigot
+            java: java8
+          - minecraft_version: 1.13
+            type: spigot
+            java: java8
+
+          - minecraft_version: 1.12.2
+            type: spigot
+            java: java8
+          - minecraft_version: 1.12.1
+            type: spigot
+            java: java8
+          - minecraft_version: 1.12
+            type: spigot
+            java: java8
+
+          - minecraft_version: 1.11.2
+            type: spigot
+            java: java8
+          - minecraft_version: 1.11.1
+            type: spigot
+            java: java8
+          - minecraft_version: 1.11
+            type: spigot
+            java: java8
+
+          - minecraft_version: 1.10.2
+            impl_version: 1.10.2-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+          - minecraft_version: 1.10
+            impl_version: 1.10-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+
+          - minecraft_version: 1.9.4
+            impl_version: 1.9.4-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+          - minecraft_version: 1.9.2
+            impl_version: 1.9.2-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+          - minecraft_version: 1.9
+            impl_version: 1.9-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+
+          - minecraft_version: 1.8.8
+            impl_version: 1.8.8-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+          - minecraft_version: 1.8.7
+            impl_version: 1.8.7-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+          - minecraft_version: 1.8.6
+            impl_version: 1.8.6-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+          - minecraft_version: 1.8.5
+            impl_version: 1.8.5-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+          - minecraft_version: 1.8.4
+            impl_version: 1.8.4-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+          - minecraft_version: 1.8.3
+            impl_version: 1.8.3-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+          - minecraft_version: 1.8
+            impl_version: 1.8-R0.1-SNAPSHOT-latest
+            type: spigot
+            java: java8
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Echo build info
+        run: echo "Building ${{ matrix.minecraft_version }} (${{ matrix.impl_version }}) with server type ${{ matrix.type }} on ${{ matrix.java }}"
+
+      - name: Build Docker Image
+        run: |
+          docker build \
+            --build-arg JAVA_VERSION=${{ matrix.java }} \
+            --build-arg SERVER_TYPE=${{ matrix.type }} \
+            --build-arg IMPL_VERSION=${{ matrix.impl_version }} \
+            --build-arg MINECRAFT_VERSION=${{ matrix.minecraft_version }} \
+            \
+            --tag ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }} \
+            .
+
+      - name: Login to Docker
+        run: echo $DOCKER_PASS | docker login $DOCKER_URL -u $DOCKER_USER --password-stdin
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          DOCKER_URL: ${{ secrets.DOCKER_HUB_URL }}
+
+      - name: Push Docker Image
+        run: docker push ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }} --all-tags
