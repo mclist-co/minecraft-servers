@@ -10,8 +10,9 @@ ENV VERSION ${IMPL_VERSION:-$MINECRAFT_VERSION}
 ENV TYPE ${SERVER_TYPE}
 
 ENV EULA TRUE
-ENV SETUP_ONLY TRUE
 
-RUN /start
+COPY ./copy_server_jar.sh /
+RUN /copy_server_jar.sh && rm /copy_server_jar.sh
 
-ENV SETUP_ONLY FALSE
+ENV CUSTOM_SERVER /server.jar
+ENV TYPE CUSTOM
