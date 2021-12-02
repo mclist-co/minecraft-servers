@@ -16,6 +16,10 @@ RUN /copy_server_jar.sh && rm /copy_server_jar.sh && touch -a -m -t 200001010000
 
 FROM itzg/minecraft-server:${JAVA_VERSION} AS runner
 
+# only needed to set the version of the custom server
+ARG MINECRAFT_VERSION
+ARG IMPL_VERSION
+
 COPY --from=builder /server.jar /server.jar
 
 ENV CUSTOM_SERVER /server.jar
