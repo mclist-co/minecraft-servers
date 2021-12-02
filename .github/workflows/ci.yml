@@ -135,9 +135,9 @@ jobs:
             java: java8
 
           # bukkit images
-          - minecraft_version: "1.16.5"
-            type: bukkit
-            java: java11
+          # - minecraft_version: "1.16.5"
+          #   type: bukkit
+          #   java: java11
           - minecraft_version: "1.16.4"
             type: bukkit
             java: java11
