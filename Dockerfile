@@ -20,3 +20,5 @@ COPY --from=builder /server.jar /server.jar
 
 ENV CUSTOM_SERVER /server.jar
 ENV TYPE CUSTOM
+
+ENV EULA TRUE
