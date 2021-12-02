@@ -2,7 +2,6 @@ name: publish docker images
 
 on:
   push:
-    branches: [master]
 
 jobs:
   build:
@@ -315,6 +314,7 @@ jobs:
           docker rm --force mcserver
 
       - name: Login to Docker
+        if: github.ref == 'refs/heads/master'
         run: echo $DOCKER_PASS | docker login $DOCKER_URL -u $DOCKER_USER --password-stdin
         env:
           DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}
@@ -322,4 +322,5 @@ jobs:
           DOCKER_URL: ${{ secrets.DOCKER_HUB_URL }}
 
       - name: Push Docker Image
+        if: github.ref == 'refs/heads/master'
         run: docker push ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }} --all-tags
