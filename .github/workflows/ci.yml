@@ -282,6 +282,16 @@ jobs:
             --tag ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }} \
             .
 
+      - name: Validate docker image (max 10 minutes)
+        timeout-minutes: 10
+        run: |
+          docker run --detach --name mcserver ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
+          until [ "$(docker inspect -f {{.State.Health.Status}} mcserver)" = "healthy" ]; do \
+            sleep 1; \
+          done;
+          docker logs mcserver
+          docker rm --force mcserver
+
       - name: Login to Docker
         run: echo $DOCKER_PASS | docker login $DOCKER_URL -u $DOCKER_USER --password-stdin
         env:
