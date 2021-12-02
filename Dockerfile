@@ -19,6 +19,7 @@ FROM itzg/minecraft-server:${JAVA_VERSION} AS runner
 COPY --from=builder /server.jar /server.jar
 
 ENV CUSTOM_SERVER /server.jar
+ENV VERSION ${IMPL_VERSION:-$MINECRAFT_VERSION}
 ENV TYPE CUSTOM
 
 ENV EULA TRUE
