@@ -10,6 +10,9 @@ jobs:
       matrix:
         include:
           # vanilla images
+          - minecraft_version: "1.18.1"
+            type: vanilla
+            java: java17
           - minecraft_version: "1.18"
             type: vanilla
             java: java17
@@ -133,6 +136,9 @@ jobs:
             java: java8
 
           # spigot images
+          - minecraft_version: "1.18.1"
+            type: spigot
+            java: java17
           - minecraft_version: "1.18"
             type: spigot
             java: java17
@@ -268,6 +274,9 @@ jobs:
             java: java8
 
           # bukkit images
+          - minecraft_version: "1.18.1"
+            type: bukkit
+            java: java17
           - minecraft_version: "1.18"
             type: bukkit
             java: java17
