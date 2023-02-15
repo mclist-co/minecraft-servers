@@ -458,40 +458,59 @@ jobs:
             java: java8
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Echo build info
         run: echo "Building ${{ matrix.minecraft_version }} (${{ matrix.impl_version }}) with server type ${{ matrix.type }} on ${{ matrix.java }}"
 
-      - name: Build Docker Image
-        run: |
-          docker build \
-            --build-arg JAVA_VERSION=${{ matrix.java }} \
-            --build-arg SERVER_TYPE=${{ matrix.type }} \
-            --build-arg IMPL_VERSION=${{ matrix.impl_version }} \
-            --build-arg MINECRAFT_VERSION=${{ matrix.minecraft_version }} \
-            \
-            --tag ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }} \
-            .
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Container Registry
+        uses: docker/login-action@v2
+        if: github.ref == 'refs/heads/master'
+        with:
+          registry: ${{ secrets.DOCKER_HUB_URL }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      - name: Build
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          platforms: linux/amd64
+          push: false
+          build-args: |
+            JAVA_VERSION=${{ matrix.java }}
+            SERVER_TYPE=${{ matrix.type }}
+            IMPL_VERSION=${{ matrix.impl_version }}
+            MINECRAFT_VERSION=${{ matrix.minecraft_version }}
+          tags: minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
+          outputs: type=docker
 
       - name: Validate docker image (max 10 minutes)
         timeout-minutes: 10
         run: |
-          docker run --detach --name mcserver ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
+          docker images
+          docker run --detach --name mcserver minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
           until [ "$(docker inspect -f {{.State.Health.Status}} mcserver)" = "healthy" ]; do \
             sleep 1; \
           done;
           docker logs mcserver
           docker rm --force mcserver
 
-      - name: Login to Docker
-        if: github.ref == 'refs/heads/master'
-        run: echo $DOCKER_PASS | docker login $DOCKER_URL -u $DOCKER_USER --password-stdin
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}
-          DOCKER_PASS: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          DOCKER_URL: ${{ secrets.DOCKER_HUB_URL }}
-
-      - name: Push Docker Image
-        if: github.ref == 'refs/heads/master'
-        run: docker push ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }} --all-tags
+      - name: Build
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          build-args: |
+            JAVA_VERSION=${{ matrix.java }}
+            SERVER_TYPE=${{ matrix.type }}
+            IMPL_VERSION=${{ matrix.impl_version }}
+            MINECRAFT_VERSION=${{ matrix.minecraft_version }}
+          tags: ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
