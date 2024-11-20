@@ -14,16 +14,16 @@ jobs:
           # vanilla images
           - minecraft_version: "1.21.3"
             type: vanilla
-            java: java17
+            java: java21
           - minecraft_version: "1.21.2"
             type: vanilla
-            java: java17
+            java: java21
           - minecraft_version: "1.21.1"
             type: vanilla
-            java: java17
+            java: java21
           - minecraft_version: "1.21"
             type: vanilla
-            java: java17
+            java: java21
 
           - minecraft_version: "1.20.6"
             type: vanilla
@@ -194,16 +194,16 @@ jobs:
           # spigot images
           - minecraft_version: "1.21.3"
             type: spigot
-            java: java17
+            java: java21
           - minecraft_version: "1.21.2"
             type: spigot
-            java: java17
+            java: java21
           - minecraft_version: "1.21.1"
             type: spigot
-            java: java17
+            java: java21
           - minecraft_version: "1.21"
             type: spigot
-            java: java17
+            java: java21
 
           - minecraft_version: "1.20.6"
             type: spigot
@@ -387,16 +387,16 @@ jobs:
           # bukkit images
           - minecraft_version: "1.21.3"
             type: bukkit
-            java: java17
+            java: java21
           - minecraft_version: "1.21.2"
             type: bukkit
-            java: java17
+            java: java21
           - minecraft_version: "1.21.1"
             type: bukkit
-            java: java17
+            java: java21
           - minecraft_version: "1.21"
             type: bukkit
-            java: java17
+            java: java21
 
           - minecraft_version: "1.20.6"
             type: bukkit
@@ -618,15 +618,13 @@ jobs:
           tags: minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
           outputs: type=docker
 
-      - name: Validate docker image (max 30 minutes)
-        timeout-minutes: 30
+      - name: Validate docker image (max 10 minutes)
+        timeout-minutes: 10
         run: |
           docker images
           docker run --detach --name mcserver minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
           until [ "$(docker inspect -f {{.State.Health.Status}} mcserver)" = "healthy" ]; do \
-            docker logs mcserver; \
-            docker inspect mcserver; \
-            sleep 1; \
+            sleep 60; \
           done;
           docker logs mcserver
           docker rm --force mcserver
