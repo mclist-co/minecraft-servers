@@ -27,25 +27,25 @@ jobs:
 
           - minecraft_version: "1.20.6"
             type: vanilla
-            java: java17
+            java: java21
           - minecraft_version: "1.20.5"
             type: vanilla
-            java: java17
+            java: java21
           - minecraft_version: "1.20.4"
             type: vanilla
-            java: java17
+            java: java21
           - minecraft_version: "1.20.3"
             type: vanilla
-            java: java17
+            java: java21
           - minecraft_version: "1.20.2"
             type: vanilla
-            java: java17
+            java: java21
           - minecraft_version: "1.20.1"
             type: vanilla
-            java: java17
+            java: java21
           - minecraft_version: "1.20"
             type: vanilla
-            java: java17
+            java: java21
 
           - minecraft_version: "1.19.4"
             type: vanilla
@@ -207,25 +207,25 @@ jobs:
 
           - minecraft_version: "1.20.6"
             type: spigot
-            java: java17
+            java: java21
           - minecraft_version: "1.20.5"
             type: spigot
-            java: java17
+            java: java21
           - minecraft_version: "1.20.4"
             type: spigot
-            java: java17
+            java: java21
           - minecraft_version: "1.20.3"
             type: spigot
-            java: java17
+            java: java21
           - minecraft_version: "1.20.2"
             type: spigot
-            java: java17
+            java: java21
           - minecraft_version: "1.20.1"
             type: spigot
-            java: java17
+            java: java21
           - minecraft_version: "1.20"
             type: spigot
-            java: java17
+            java: java21
 
           - minecraft_version: "1.19.4"
             type: spigot
@@ -400,25 +400,25 @@ jobs:
 
           - minecraft_version: "1.20.6"
             type: bukkit
-            java: java17
+            java: java21
           - minecraft_version: "1.20.5"
             type: bukkit
-            java: java17
+            java: java21
           - minecraft_version: "1.20.4"
             type: bukkit
-            java: java17
+            java: java21
           - minecraft_version: "1.20.3"
             type: bukkit
-            java: java17
+            java: java21
           - minecraft_version: "1.20.2"
             type: bukkit
-            java: java17
+            java: java21
           - minecraft_version: "1.20.1"
             type: bukkit
-            java: java17
+            java: java21
           - minecraft_version: "1.20"
             type: bukkit
-            java: java17
+            java: java21
 
           - minecraft_version: "1.19.4"
             type: bukkit
