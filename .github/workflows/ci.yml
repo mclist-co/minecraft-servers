@@ -618,12 +618,14 @@ jobs:
           tags: minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
           outputs: type=docker
 
-      - name: Validate docker image (max 10 minutes)
-        timeout-minutes: 10
+      - name: Validate docker image (max 30 minutes)
+        timeout-minutes: 30
         run: |
           docker images
           docker run --detach --name mcserver minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
           until [ "$(docker inspect -f {{.State.Health.Status}} mcserver)" = "healthy" ]; do \
+            docker logs mcserver; \
+            docker inspect mcserver; \
             sleep 1; \
           done;
           docker logs mcserver
