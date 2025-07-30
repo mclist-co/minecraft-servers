@@ -7,7 +7,13 @@ while [ 1 ]; do
 
   SERVER=$(find /data -name "*server*.jar")
 
+  if [ -n "$SERVER" ]; then
+    echo "Found server jar: $SERVER"
+  fi
+
   if [ -z "$SERVER" ]; then
+    echo "No server jar found in /data. Listing contents:"
+    ls /data
     echo "Server jar not found. Retrying in 5 seconds..."
     sleep 5
   else
