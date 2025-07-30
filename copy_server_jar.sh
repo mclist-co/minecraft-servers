@@ -44,7 +44,17 @@ function obtain_via_buildtools() {
 
   SERVER="/data/server.jar"
 
-  if [ -z "$SERVER" ]; then
+  MAX_DEPTH=1
+
+  while [ ! -f "$SERVER" ] && [ $MAX_DEPTH -gt 0 ]; do
+    echo "BuildTools did not produce a server.jar. Listing contents of /data:"
+    ls /data
+    echo "Attempting to find server.jar with max depth $MAX_DEPTH..."
+    SERVER=$(find /data -maxdepth $MAX_DEPTH -name "spigot-*.jar" -o -name "craftbukkit-*.jar" -o -name "bukkit-*.jar" | head -n 1)
+    MAX_DEPTH=$((MAX_DEPTH + 1))
+  done
+
+  if [ ! -f "$SERVER" ]; then
     echo "No server jar found after running BuildTools. Exiting."
     exit 1
   fi
