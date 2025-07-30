@@ -54,7 +54,7 @@ function obtain_via_buildtools() {
 }
 
 # when spigot or bukkit use buildtools
-if [[ "$TYPE" == "spigot" || "$TYPE" == "bukkit" ]]; then
+if [[ "$TYPE" == "spigot" || "$TYPE" == "bukkit" || "$TYPE" == "craftbukkit" ]]; then
   obtain_via_buildtools
   exit 0
 fi
