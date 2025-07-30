@@ -46,7 +46,7 @@ function obtain_via_buildtools() {
 
   MAX_DEPTH=1
 
-  while [ ! -f "$SERVER" ] && [ $MAX_DEPTH -gt 0 ]; do
+  while [ ! -f "$SERVER" ] && [ $MAX_DEPTH -lt 10 ]; do
     echo "BuildTools did not produce a server.jar. Listing contents of /data:"
     ls /data
     echo "Attempting to find server.jar with max depth $MAX_DEPTH..."
@@ -55,7 +55,7 @@ function obtain_via_buildtools() {
   done
 
   if [ ! -f "$SERVER" ]; then
-    echo "No server jar found after running BuildTools. Exiting."
+    echo "No server.jar found after running BuildTools. Exiting."
     exit 1
   fi
 

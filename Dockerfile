@@ -1,6 +1,7 @@
 ARG JAVA_VERSION
+ARG JAVA_VERSION_BUILD
 
-FROM itzg/minecraft-server:${JAVA_VERSION} AS builder
+FROM itzg/minecraft-server:${JAVA_VERSION_BUILD} AS builder
 
 ARG SERVER_TYPE
 ARG MINECRAFT_VERSION

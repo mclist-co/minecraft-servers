@@ -14,37 +14,48 @@ jobs:
           - minecraft_version: "1.21.3"
             type: vanilla
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21.2"
             type: vanilla
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21.1"
             type: vanilla
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21"
             type: vanilla
             java: java21
+            java_build: java21-jdk
 
           - minecraft_version: "1.20.6"
             type: vanilla
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.5"
             type: vanilla
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.4"
             type: vanilla
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.3"
             type: vanilla
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.2"
             type: vanilla
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.1"
             type: vanilla
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20"
             type: vanilla
             java: java21
+            java_build: java21-jdk
 
           - minecraft_version: "1.19.4"
             type: vanilla
@@ -194,37 +205,48 @@ jobs:
           - minecraft_version: "1.21.3"
             type: spigot
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21.2"
             type: spigot
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21.1"
             type: spigot
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21"
             type: spigot
             java: java21
+            java_build: java21-jdk
 
           - minecraft_version: "1.20.6"
             type: spigot
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.5"
             type: spigot
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.4"
             type: spigot
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.3"
             type: spigot
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.2"
             type: spigot
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.1"
             type: spigot
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20"
             type: spigot
             java: java21
+            java_build: java21-jdk
 
           - minecraft_version: "1.19.4"
             type: spigot
@@ -375,37 +397,48 @@ jobs:
           - minecraft_version: "1.21.3"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21.2"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21.1"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
 
           - minecraft_version: "1.20.6"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.5"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.4"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.3"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.2"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20.1"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.20"
             type: craftbukkit
             java: java21
+            java_build: java21-jdk
 
           - minecraft_version: "1.19.4"
             type: craftbukkit
@@ -581,6 +614,7 @@ jobs:
           load: true
           build-args: |
             JAVA_VERSION=${{ matrix.java }}
+            JAVA_VERSION_BUILD=${{ matrix.java_build || matrix.java }}
             SERVER_TYPE=${{ matrix.type }}
             MINECRAFT_VERSION=${{ matrix.minecraft_version }}
           tags: ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
@@ -606,6 +640,7 @@ jobs:
           push: true
           build-args: |
             JAVA_VERSION=${{ matrix.java }}
+            JAVA_VERSION_BUILD=${{ matrix.java_build || matrix.java }}
             SERVER_TYPE=${{ matrix.type }}
             MINECRAFT_VERSION=${{ matrix.minecraft_version }}
           tags: ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
