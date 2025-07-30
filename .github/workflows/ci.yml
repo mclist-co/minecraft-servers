@@ -216,9 +216,9 @@ jobs:
           - minecraft_version: "1.20.3"
             type: spigot
             java: java21
-          - minecraft_version: "1.20.2"
-            type: spigot
-            java: java21
+          # - minecraft_version: "1.20.2"
+          #   type: spigot
+          #   java: java21
           - minecraft_version: "1.20.1"
             type: spigot
             java: java21
