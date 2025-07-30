@@ -10,8 +10,6 @@ ENV TYPE=${SERVER_TYPE}
 
 ENV EULA=TRUE
 
-RUN curl -o /BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
-
 COPY ./copy_server_jar.sh /
 RUN /copy_server_jar.sh
 RUN touch -a -m -t 200001010000.00 /server.jar

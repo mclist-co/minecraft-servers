@@ -30,12 +30,15 @@ function obtain_via_start_command() {
 }
 
 function obtain_via_buildtools() {
-  echo "Running BuildTools to obtain server jar..."
+  echo "Downloading BuildTools.jar..."
 
-  if [ ! -f /BuildTools.jar ]; then
-    echo "BuildTools.jar not found. Exiting."
+  curl -o /BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+  if [ $? -ne 0 ]; then
+    echo "Failed to download BuildTools.jar. Exiting."
     exit 1
   fi
+
+  echo "Running BuildTools to obtain server jar..."
 
   java -jar /BuildTools.jar --rev $VERSION --compile $TYPE --final-name server.jar
 

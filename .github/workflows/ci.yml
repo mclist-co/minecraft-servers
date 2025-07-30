@@ -578,12 +578,14 @@ jobs:
           context: .
           platforms: linux/amd64
           push: false
+          load: true
           build-args: |
             JAVA_VERSION=${{ matrix.java }}
             SERVER_TYPE=${{ matrix.type }}
             MINECRAFT_VERSION=${{ matrix.minecraft_version }}
           tags: ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
-          outputs: type=docker
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Validate docker image (max 10 minutes)
         timeout-minutes: 10
@@ -607,3 +609,5 @@ jobs:
             SERVER_TYPE=${{ matrix.type }}
             MINECRAFT_VERSION=${{ matrix.minecraft_version }}
           tags: ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
