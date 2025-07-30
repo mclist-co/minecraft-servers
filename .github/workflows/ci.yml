@@ -194,9 +194,9 @@ jobs:
           - minecraft_version: "1.21.3"
             type: spigot
             java: java21
-          - minecraft_version: "1.21.2"
-            type: spigot
-            java: java21
+          # - minecraft_version: "1.21.2"
+          #   type: spigot
+          #   java: java21
           - minecraft_version: "1.21.1"
             type: spigot
             java: java21
@@ -204,9 +204,9 @@ jobs:
             type: spigot
             java: java21
 
-          # - minecraft_version: "1.20.6"
-          #   type: spigot
-          #   java: java21
+          - minecraft_version: "1.20.6"
+            type: spigot
+            java: java21
           - minecraft_version: "1.20.5"
             type: spigot
             java: java21
@@ -333,53 +333,41 @@ jobs:
             java: java8
 
           - minecraft_version: "1.10.2"
-            impl_version: 1.10.2-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
           - minecraft_version: "1.10"
-            impl_version: 1.10-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
 
           - minecraft_version: "1.9.4"
-            impl_version: 1.9.4-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
           - minecraft_version: "1.9.2"
-            impl_version: 1.9.2-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
           - minecraft_version: "1.9"
-            impl_version: 1.9-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
 
           - minecraft_version: "1.8.8"
-            impl_version: 1.8.8-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
           - minecraft_version: "1.8.7"
-            impl_version: 1.8.7-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
           - minecraft_version: "1.8.6"
-            impl_version: 1.8.6-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
           - minecraft_version: "1.8.5"
-            impl_version: 1.8.5-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
           - minecraft_version: "1.8.4"
-            impl_version: 1.8.4-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
           - minecraft_version: "1.8.3"
-            impl_version: 1.8.3-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
           - minecraft_version: "1.8"
-            impl_version: 1.8-R0.1-SNAPSHOT-latest
             type: spigot
             java: java8
 
@@ -397,9 +385,9 @@ jobs:
             type: bukkit
             java: java21
 
-          # - minecraft_version: "1.20.6"
-          #   type: bukkit
-          #   java: java21
+          - minecraft_version: "1.20.6"
+            type: bukkit
+            java: java21
           - minecraft_version: "1.20.5"
             type: bukkit
             java: java21
@@ -473,32 +461,25 @@ jobs:
             type: bukkit
             java: java8
           - minecraft_version: "1.15.1"
-            impl_version: 1.15.1-R0.1-SNAPSHOT
             type: bukkit
             java: java8
           - minecraft_version: "1.15"
-            impl_version: 1.15-R0.1-SNAPSHOT
             type: bukkit
             java: java8
 
           - minecraft_version: "1.14.4"
-            impl_version: 1.14.4-R0.1-SNAPSHOT
             type: bukkit
             java: java8
           - minecraft_version: "1.14.3"
-            impl_version: 1.14.3-R0.1-SNAPSHOT
             type: bukkit
             java: java8
           - minecraft_version: "1.14.2"
-            impl_version: 1.14.2-R0.1-SNAPSHOT
             type: bukkit
             java: java8
           - minecraft_version: "1.14.1"
-            impl_version: 1.14.1-R0.1-SNAPSHOT
             type: bukkit
             java: java8
           - minecraft_version: "1.14"
-            impl_version: 1.14-R0.1-SNAPSHOT
             type: bukkit
             java: java8
 
@@ -533,53 +514,41 @@ jobs:
             java: java8
 
           - minecraft_version: "1.10.2"
-            impl_version: 1.10.2-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
           - minecraft_version: "1.10"
-            impl_version: 1.10-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
 
           - minecraft_version: "1.9.4"
-            impl_version: 1.9.4-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
           - minecraft_version: "1.9.2"
-            impl_version: 1.9.2-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
           - minecraft_version: "1.9"
-            impl_version: 1.9-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
 
           - minecraft_version: "1.8.8"
-            impl_version: 1.8.8-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
           - minecraft_version: "1.8.7"
-            impl_version: 1.8.7-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
           - minecraft_version: "1.8.6"
-            impl_version: 1.8.6-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
           - minecraft_version: "1.8.5"
-            impl_version: 1.8.5-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
           - minecraft_version: "1.8.4"
-            impl_version: 1.8.4-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
           - minecraft_version: "1.8.3"
-            impl_version: 1.8.3-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
           - minecraft_version: "1.8"
-            impl_version: 1.8-R0.1-SNAPSHOT-latest
             type: bukkit
             java: java8
 
@@ -587,7 +556,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Echo build info
-        run: echo "Building ${{ matrix.minecraft_version }} (${{ matrix.impl_version }}) with server type ${{ matrix.type }} on ${{ matrix.java }}"
+        run: echo "Building ${{ matrix.minecraft_version }} with server type ${{ matrix.type }} on ${{ matrix.java }}"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -612,7 +581,6 @@ jobs:
           build-args: |
             JAVA_VERSION=${{ matrix.java }}
             SERVER_TYPE=${{ matrix.type }}
-            IMPL_VERSION=${{ matrix.impl_version }}
             MINECRAFT_VERSION=${{ matrix.minecraft_version }}
           tags: ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
           outputs: type=docker
@@ -624,8 +592,8 @@ jobs:
           docker run --detach --name mcserver ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
           until [ "$(docker inspect -f {{.State.Health.Status}} mcserver)" = "healthy" ]; do \
             sleep 60; \
+            docker logs mcserver; \
           done;
-          docker logs mcserver
           docker rm --force mcserver
 
       - name: Build
@@ -637,6 +605,5 @@ jobs:
           build-args: |
             JAVA_VERSION=${{ matrix.java }}
             SERVER_TYPE=${{ matrix.type }}
-            IMPL_VERSION=${{ matrix.impl_version }}
             MINECRAFT_VERSION=${{ matrix.minecraft_version }}
           tags: ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
