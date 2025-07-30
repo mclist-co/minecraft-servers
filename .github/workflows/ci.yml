@@ -410,9 +410,9 @@ jobs:
           - minecraft_version: "1.19.4"
             type: bukkit
             java: java17
-          - minecraft_version: "1.19.3"
-            type: bukkit
-            java: java17
+          # - minecraft_version: "1.19.3"
+          #   type: bukkit
+          #   java: java17
 
           - minecraft_version: "1.19.2"
             type: bukkit
