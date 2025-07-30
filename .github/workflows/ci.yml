@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
-      max-parallel: 1
       matrix:
         include:
           # vanilla images
