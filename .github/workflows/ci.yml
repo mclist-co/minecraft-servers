@@ -289,9 +289,9 @@ jobs:
           - minecraft_version: "1.14.4"
             type: spigot
             java: java8
-          - minecraft_version: "1.14.3"
-            type: spigot
-            java: java8
+          # - minecraft_version: "1.14.3"
+          #   type: spigot
+          #   java: java8
           - minecraft_version: "1.14.2"
             type: spigot
             java: java8
