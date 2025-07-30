@@ -222,9 +222,9 @@ jobs:
           - minecraft_version: "1.20.1"
             type: spigot
             java: java21
-          - minecraft_version: "1.20"
-            type: spigot
-            java: java21
+          # - minecraft_version: "1.20"
+          #   type: spigot
+          #   java: java21
 
           - minecraft_version: "1.19.4"
             type: spigot
