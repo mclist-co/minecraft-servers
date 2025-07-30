@@ -243,9 +243,9 @@ jobs:
             type: spigot
             java: java17
 
-          - minecraft_version: "1.18.2"
-            type: spigot
-            java: java17
+          # - minecraft_version: "1.18.2"
+          #   type: spigot
+          #   java: java17
           - minecraft_version: "1.18.1"
             type: spigot
             java: java17
