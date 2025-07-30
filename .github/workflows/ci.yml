@@ -615,14 +615,14 @@ jobs:
             SERVER_TYPE=${{ matrix.type }}
             IMPL_VERSION=${{ matrix.impl_version }}
             MINECRAFT_VERSION=${{ matrix.minecraft_version }}
-          tags: minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
+          tags: ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
           outputs: type=docker
 
       - name: Validate docker image (max 10 minutes)
         timeout-minutes: 10
         run: |
           docker images
-          docker run --detach --name mcserver minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
+          docker run --detach --name mcserver ${{ secrets.DOCKER_HUB_PREFIX }}minecraft-servers/${{ matrix.type }}:${{ matrix.minecraft_version }}
           until [ "$(docker inspect -f {{.State.Health.Status}} mcserver)" = "healthy" ]; do \
             sleep 60; \
           done;
