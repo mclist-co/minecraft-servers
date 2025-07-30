@@ -97,98 +97,98 @@ jobs:
 
           - minecraft_version: "1.15.2"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.15.1"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.15"
             type: vanilla
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.14.4"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14.3"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14.2"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14.1"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14"
             type: vanilla
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.13.2"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.13.1"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.13"
             type: vanilla
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.12.2"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.12.1"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.12"
             type: vanilla
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.11.2"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.11.1"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.11"
             type: vanilla
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.10.2"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.10"
             type: vanilla
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.9.4"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.9.2"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.9"
             type: vanilla
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.8.8"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.7"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.6"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.5"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.4"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.3"
             type: vanilla
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8"
             type: vanilla
-            java: java8-multiarch
+            java: java8
 
           # spigot images
           - minecraft_version: "1.21.3"
@@ -258,7 +258,7 @@ jobs:
             java: java17
           - minecraft_version: "1.17"
             type: spigot
-            java: java16-openj9
+            java: java16
 
           - minecraft_version: "1.16.5"
             type: spigot
@@ -278,110 +278,110 @@ jobs:
 
           - minecraft_version: "1.15.2"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.15.1"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.15"
             type: spigot
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.14.4"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14.3"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14.2"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14.1"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14"
             type: spigot
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.13.2"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.13.1"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.13"
             type: spigot
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.12.2"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.12.1"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.12"
             type: spigot
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.11.2"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.11.1"
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.11"
             type: spigot
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.10.2"
             impl_version: 1.10.2-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.10"
             impl_version: 1.10-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.9.4"
             impl_version: 1.9.4-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.9.2"
             impl_version: 1.9.2-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.9"
             impl_version: 1.9-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.8.8"
             impl_version: 1.8.8-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.7"
             impl_version: 1.8.7-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.6"
             impl_version: 1.8.6-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.5"
             impl_version: 1.8.5-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.4"
             impl_version: 1.8.4-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.3"
             impl_version: 1.8.3-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8"
             impl_version: 1.8-R0.1-SNAPSHOT-latest
             type: spigot
-            java: java8-multiarch
+            java: java8
 
           # bukkit images
           - minecraft_version: "1.21.3"
@@ -451,7 +451,7 @@ jobs:
             java: java17
           - minecraft_version: "1.17"
             type: bukkit
-            java: java16-openj9
+            java: java16
 
           - minecraft_version: "1.16.5"
             type: bukkit
@@ -471,117 +471,117 @@ jobs:
 
           - minecraft_version: "1.15.2"
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.15.1"
             impl_version: 1.15.1-R0.1-SNAPSHOT
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.15"
             impl_version: 1.15-R0.1-SNAPSHOT
             type: bukkit
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.14.4"
             impl_version: 1.14.4-R0.1-SNAPSHOT
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14.3"
             impl_version: 1.14.3-R0.1-SNAPSHOT
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14.2"
             impl_version: 1.14.2-R0.1-SNAPSHOT
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14.1"
             impl_version: 1.14.1-R0.1-SNAPSHOT
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.14"
             impl_version: 1.14-R0.1-SNAPSHOT
             type: bukkit
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.13.2"
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.13.1"
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.13"
             type: bukkit
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.12.2"
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.12.1"
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.12"
             type: bukkit
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.11.2"
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.11.1"
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.11"
             type: bukkit
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.10.2"
             impl_version: 1.10.2-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.10"
             impl_version: 1.10-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.9.4"
             impl_version: 1.9.4-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.9.2"
             impl_version: 1.9.2-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.9"
             impl_version: 1.9-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
 
           - minecraft_version: "1.8.8"
             impl_version: 1.8.8-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.7"
             impl_version: 1.8.7-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.6"
             impl_version: 1.8.6-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.5"
             impl_version: 1.8.5-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.4"
             impl_version: 1.8.4-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8.3"
             impl_version: 1.8.3-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
           - minecraft_version: "1.8"
             impl_version: 1.8-R0.1-SNAPSHOT-latest
             type: bukkit
-            java: java8-multiarch
+            java: java8
 
     steps:
       - uses: actions/checkout@v3
