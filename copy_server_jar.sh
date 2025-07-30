@@ -5,7 +5,7 @@ while [ 1 ]; do
   /start
   export SETUP_ONLY=false
 
-  SERVER=$(find /data -name "*server*.jar")
+  SERVER=$(find /data -name "*.jar")
 
   if [ -n "$SERVER" ]; then
     echo "Found server jar: $SERVER"
