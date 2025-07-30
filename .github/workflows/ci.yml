@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         include:
           # vanilla images
@@ -194,9 +194,9 @@ jobs:
           - minecraft_version: "1.21.3"
             type: spigot
             java: java21
-          # - minecraft_version: "1.21.2"
-          #   type: spigot
-          #   java: java21
+          - minecraft_version: "1.21.2"
+            type: spigot
+            java: java21
           - minecraft_version: "1.21.1"
             type: spigot
             java: java21
@@ -207,24 +207,24 @@ jobs:
           - minecraft_version: "1.20.6"
             type: spigot
             java: java21
-          # - minecraft_version: "1.20.5"
-          #   type: spigot
-          #   java: java21
-          # - minecraft_version: "1.20.4"
-          #   type: spigot
-          #   java: java21
+          - minecraft_version: "1.20.5"
+            type: spigot
+            java: java21
+          - minecraft_version: "1.20.4"
+            type: spigot
+            java: java21
           - minecraft_version: "1.20.3"
             type: spigot
             java: java21
-          # - minecraft_version: "1.20.2"
-          #   type: spigot
-          #   java: java21
+          - minecraft_version: "1.20.2"
+            type: spigot
+            java: java21
           - minecraft_version: "1.20.1"
             type: spigot
             java: java21
-          # - minecraft_version: "1.20"
-          #   type: spigot
-          #   java: java21
+          - minecraft_version: "1.20"
+            type: spigot
+            java: java21
 
           - minecraft_version: "1.19.4"
             type: spigot
@@ -243,9 +243,9 @@ jobs:
             type: spigot
             java: java17
 
-          # - minecraft_version: "1.18.2"
-          #   type: spigot
-          #   java: java17
+          - minecraft_version: "1.18.2"
+            type: spigot
+            java: java17
           - minecraft_version: "1.18.1"
             type: spigot
             java: java17
@@ -279,9 +279,9 @@ jobs:
           - minecraft_version: "1.15.2"
             type: spigot
             java: java8
-          # - minecraft_version: "1.15.1"
-          #   type: spigot
-          #   java: java8
+          - minecraft_version: "1.15.1"
+            type: spigot
+            java: java8
           - minecraft_version: "1.15"
             type: spigot
             java: java8
@@ -289,18 +289,18 @@ jobs:
           - minecraft_version: "1.14.4"
             type: spigot
             java: java8
-          # - minecraft_version: "1.14.3"
-          #   type: spigot
-          #   java: java8
+          - minecraft_version: "1.14.3"
+            type: spigot
+            java: java8
           - minecraft_version: "1.14.2"
             type: spigot
             java: java8
-          # - minecraft_version: "1.14.1"
-          #   type: spigot
-          #   java: java8
-          # - minecraft_version: "1.14"
-          #   type: spigot
-          #   java: java8
+          - minecraft_version: "1.14.1"
+            type: spigot
+            java: java8
+          - minecraft_version: "1.14"
+            type: spigot
+            java: java8
 
           - minecraft_version: "1.13.2"
             type: spigot
@@ -371,185 +371,185 @@ jobs:
             type: spigot
             java: java8
 
-          # bukkit images
+          # craftbukkit images
           - minecraft_version: "1.21.3"
-            type: bukkit
+            type: craftbukkit
             java: java21
           - minecraft_version: "1.21.2"
-            type: bukkit
+            type: craftbukkit
             java: java21
           - minecraft_version: "1.21.1"
-            type: bukkit
+            type: craftbukkit
             java: java21
           - minecraft_version: "1.21"
-            type: bukkit
+            type: craftbukkit
             java: java21
 
           - minecraft_version: "1.20.6"
-            type: bukkit
+            type: craftbukkit
             java: java21
           - minecraft_version: "1.20.5"
-            type: bukkit
+            type: craftbukkit
             java: java21
           - minecraft_version: "1.20.4"
-            type: bukkit
+            type: craftbukkit
             java: java21
           - minecraft_version: "1.20.3"
-            type: bukkit
+            type: craftbukkit
             java: java21
           - minecraft_version: "1.20.2"
-            type: bukkit
+            type: craftbukkit
             java: java21
           - minecraft_version: "1.20.1"
-            type: bukkit
+            type: craftbukkit
             java: java21
           - minecraft_version: "1.20"
-            type: bukkit
+            type: craftbukkit
             java: java21
 
           - minecraft_version: "1.19.4"
-            type: bukkit
+            type: craftbukkit
             java: java17
-          # - minecraft_version: "1.19.3"
-          #   type: bukkit
-          #   java: java17
+          - minecraft_version: "1.19.3"
+            type: craftbukkit
+            java: java17
 
           - minecraft_version: "1.19.2"
-            type: bukkit
+            type: craftbukkit
             java: java17
           - minecraft_version: "1.19.1"
-            type: bukkit
+            type: craftbukkit
             java: java17
           - minecraft_version: "1.19"
-            type: bukkit
+            type: craftbukkit
             java: java17
 
           - minecraft_version: "1.18.2"
-            type: bukkit
+            type: craftbukkit
             java: java17
           - minecraft_version: "1.18.1"
-            type: bukkit
+            type: craftbukkit
             java: java17
           - minecraft_version: "1.18"
-            type: bukkit
+            type: craftbukkit
             java: java17
 
           - minecraft_version: "1.17.1"
-            type: bukkit
+            type: craftbukkit
             java: java17
           - minecraft_version: "1.17"
-            type: bukkit
+            type: craftbukkit
             java: java16
 
           - minecraft_version: "1.16.5"
-            type: bukkit
+            type: craftbukkit
             java: java11
-          # - minecraft_version: "1.16.4"
-          #   type: bukkit
-          #   java: java11
+          - minecraft_version: "1.16.4"
+            type: craftbukkit
+            java: java11
           - minecraft_version: "1.16.3"
-            type: bukkit
+            type: craftbukkit
             java: java11
           - minecraft_version: "1.16.2"
-            type: bukkit
+            type: craftbukkit
             java: java11
           - minecraft_version: "1.16.1"
-            type: bukkit
+            type: craftbukkit
             java: java11
 
           - minecraft_version: "1.15.2"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.15.1"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.15"
-            type: bukkit
+            type: craftbukkit
             java: java8
 
           - minecraft_version: "1.14.4"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.14.3"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.14.2"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.14.1"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.14"
-            type: bukkit
+            type: craftbukkit
             java: java8
 
           - minecraft_version: "1.13.2"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.13.1"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.13"
-            type: bukkit
+            type: craftbukkit
             java: java8
 
           - minecraft_version: "1.12.2"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.12.1"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.12"
-            type: bukkit
+            type: craftbukkit
             java: java8
 
           - minecraft_version: "1.11.2"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.11.1"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.11"
-            type: bukkit
+            type: craftbukkit
             java: java8
 
           - minecraft_version: "1.10.2"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.10"
-            type: bukkit
+            type: craftbukkit
             java: java8
 
           - minecraft_version: "1.9.4"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.9.2"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.9"
-            type: bukkit
+            type: craftbukkit
             java: java8
 
           - minecraft_version: "1.8.8"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.8.7"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.8.6"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.8.5"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.8.4"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.8.3"
-            type: bukkit
+            type: craftbukkit
             java: java8
           - minecraft_version: "1.8"
-            type: bukkit
+            type: craftbukkit
             java: java8
 
     steps:
