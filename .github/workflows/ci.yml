@@ -11,6 +11,10 @@ jobs:
       matrix:
         include:
           # vanilla images
+          - minecraft_version: "1.21.4"
+            type: vanilla
+            java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21.3"
             type: vanilla
             java: java21
@@ -202,6 +206,10 @@ jobs:
             java: java8
 
           # spigot images
+          - minecraft_version: "1.21.4"
+            type: spigot
+            java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21.3"
             type: spigot
             java: java21
@@ -394,6 +402,10 @@ jobs:
             java: java8
 
           # craftbukkit images
+          - minecraft_version: "1.21.4"
+            type: craftbukkit
+            java: java21
+            java_build: java21-jdk
           - minecraft_version: "1.21.3"
             type: craftbukkit
             java: java21
